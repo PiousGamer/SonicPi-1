@@ -1,40 +1,87 @@
+#Join Us! Fire Emblem Binding Blade
 use_bpm 100
-use_synth :piano
+use_synth  :tech_saws
 use_synth_defaults amp: 2
 
-play :r
-sleep 0.5
-play:g4
-play:d4
-sleep 0.75
-play:c4
-play:f4
-sleep 0.75
-play:bb4
-play:f4
-sleep 0.75
-play:gs4
-play:d4
-sleep 0.75
-play:c5
-play:g4
-sleep 0.75
-4.times do
+define :high_row do
+  #m1
+  play :r
+  sleep 0.5
+  play:g4
+  play:d4
+  sleep 0.75
+  play:c4
+  play:f4
+  sleep 0.75
+  play:bb4
+  play:f4
+  sleep 0.75
+  play:gs4
+  play:d4
+  sleep 0.75
+  play:c5
+  play:g4
+  sleep 0.5
+  #m2
+  4.times do
+    play:d5
+    play:a4
+    sleep 0.25
+    play :r
+    sleep 0.5
+  end
   play:d5
   play:a4
   sleep 0.25
   play :r
-  sleep 0.5
+  sleep 0.75
 end
-play:d5
-play:a4
-sleep 0.25
-
-4.times do
+define :low_row do
+  play:c3, sustain: 2
+  sleep 3
+  play:c3
+  sleep 0.5
+  play:ab2
+  sleep 0.5
+  4.times do
+    play:g2
+    sleep 0.25
+    play :r
+    sleep 0.5
+  end
   play:g2
   sleep 0.25
-  play :r
+  play:r
+  sleep 0.25
+  play:g2
   sleep 0.5
 end
-play:g2
-sleep 0.25
+
+
+
+#Highrow
+live_loop :h_row do
+  with_fx :bitcrusher do
+    high_row
+  end
+end
+
+
+
+#Lowrow
+live_loop :l_row do
+  with_fx :bitcrusher do
+    low_row
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
