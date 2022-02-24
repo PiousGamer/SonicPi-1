@@ -1,6 +1,6 @@
 #Join Us! Fire Emblem Binding Blade
 use_bpm 100
-use_synth  :tech_saws
+use_synth :blade
 use_synth_defaults amp: 2
 
 define :high_row do
@@ -35,6 +35,31 @@ define :high_row do
   sleep 0.25
   play :r
   sleep 0.75
+  #sec
+  play:g4
+  sleep 0.75
+  play:b4
+  sleep 0.75
+  play:a4
+  sleep 0.75
+  play:f4
+  sleep 0.75
+  play:g4
+  sleep 0.5
+  play:a4
+  sleep 0.5
+  play:g4
+  sleep 0.75
+  play:d5
+  sleep 0.75
+  play:c5
+  sleep 0.75
+  play:a4
+  sleep 0.75
+  play:b4
+  sleep 0.5
+  play:c5
+  sleep 0.5
 end
 define :low_row do
   play:c3, sustain: 2
@@ -55,6 +80,31 @@ define :low_row do
   sleep 0.25
   play:g2
   sleep 0.5
+  #sec
+  play:C2
+  sleep 0.75
+  play:DS2
+  sleep 0.75
+  play:f2
+  sleep 0.75
+  play:g2
+  sleep 0.75
+  play:C2
+  sleep 0.5
+  play:D2
+  sleep 0.5
+  play:C2
+  sleep 0.75
+  play:g2
+  sleep 0.75
+  play:f2
+  sleep 0.75
+  play:D2
+  sleep 0.75
+  play:DS2
+  sleep 0.5
+  play:f2
+  sleep 0.5
 end
 
 
@@ -66,22 +116,9 @@ live_loop :h_row do
   end
 end
 
-
-
 #Lowrow
 live_loop :l_row do
   with_fx :bitcrusher do
     low_row
   end
 end
-
-
-
-
-
-
-
-
-
-
-
