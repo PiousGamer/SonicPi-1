@@ -1,6 +1,6 @@
 #Join Us! Fire Emblem Binding Blade
 use_bpm 100
-use_synth :blade
+use_synth :prophet
 use_synth_defaults amp: 2
 
 define :high_row do
@@ -35,7 +35,6 @@ define :high_row do
   sleep 0.25
   play :r
   sleep 0.75
-  #sec
   play:g4
   sleep 0.75
   play:b4
@@ -60,6 +59,30 @@ define :high_row do
   sleep 0.5
   play:c5
   sleep 0.5
+  play:f5
+  sleep 0.25
+  play:e5
+  sleep 0.25
+  play:c5
+  sleep 0.25
+  play:d5
+  sleep 0.25
+  play:a4
+  sleep 0.25
+  play:g4
+  sleep 0.25
+  play:e4
+  sleep 0.25
+  play:d4
+  sleep 0.25
+  play:e2
+  sleep 0.25
+  play:f2
+  play:d2
+  sleep 0.75
+  play:e4
+  play:e2
+  sleep 0.75
 end
 define :low_row do
   play:c3, sustain: 2
@@ -80,7 +103,6 @@ define :low_row do
   sleep 0.25
   play:g2
   sleep 0.5
-  #sec
   play:C2
   sleep 0.75
   play:DS2
@@ -102,10 +124,40 @@ define :low_row do
   play:D2
   sleep 0.75
   play:DS2
-  sleep 0.5
+  sleep 0.25
   play:f2
-  sleep 0.5
+  sleep 0.25
+  sleep 2
+  play:d3
+  sleep 0.25
+  play:c3
+  sleep 0.25
+  play:b3
+  sleep 0.75
+  play:b3
+  sleep 0.75
 end
+#variables to store samples
+crit =  "C:/Users/daniel_chavez/Downloads/crit.wav"
+brigand = "C:/Users/daniel_chavez/Downloads/Brigand.wav"
+levelup = "C:/Users/daniel_chavez/Downloads/level up.wav"
+
+
+
+
+
+
+#Intro
+sample brigand
+sleep 2
+sample crit
+sleep 1
+sample crit
+sleep 1
+sample crit
+sleep 1
+sample levelup
+sleep 2
 
 
 
@@ -116,9 +168,16 @@ live_loop :h_row do
   end
 end
 
+
 #Lowrow
 live_loop :l_row do
   with_fx :bitcrusher do
     low_row
   end
 end
+
+
+
+
+
+
