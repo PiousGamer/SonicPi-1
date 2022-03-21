@@ -126,7 +126,6 @@ define :low_row do
   play:DS2
   sleep 0.25
   play:f2
-  sleep 0.25
   sleep 2
   play:d3
   sleep 0.25
@@ -148,16 +147,20 @@ levelup = "C:/Users/daniel_chavez/Downloads/level up.wav"
 
 
 #Intro
-sample brigand
-sleep 2
-sample crit
-sleep 1
-sample crit
-sleep 1
-sample crit
-sleep 1
-sample levelup
-sleep 2
+define :intro do |s1, s2, s3, s4, s5|
+  sample s1
+  sleep 2
+  sample s2
+  sleep 1
+  sample s3
+  sleep 1
+  sample s4
+  sleep 1
+  sample s5
+  sleep 2
+end
+intro brigand, crit, crit, crit, levelup
+
 
 
 
@@ -175,9 +178,5 @@ live_loop :l_row do
     low_row
   end
 end
-
-
-
-
 
 
